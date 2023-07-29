@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
-// import { useContext } from 'react';
+import { useContext } from 'react';
+import travelContext from '../context/travel/TravelContext';
 import { Link, useNavigate } from 'react-router-dom'
 // import noteContext from '../context/notes/noteContext';
 import './login.css';
 
 const Signup = () => {
-    //   document.title = 'NOTEDiN- Signup';
-    //   const context = useContext(noteContext);
-    //   const { showAlert, host } = context;
+    //   document.title = 'Travel planner pro- Signup';
+    const context = useContext(travelContext);
+    const { showAlert } = context;
     let host = "https://travel-backend-rho.vercel.app";
 
     const navigate = useNavigate();
@@ -44,14 +45,14 @@ const Signup = () => {
                 setTimeout(() => {
                     setCredentials({ email: "", password: "" })
                     setLoading(false);
-                    // showAlert("Signup succesfully", "success")
+                    showAlert("Signup succesfully", "success")
                     navigate('/')
                 }, 2000);
 
             } else {
                 setTimeout(() => {
                     setLoading(false);
-                    // showAlert(result.error, "danger")
+                    showAlert(result.error, "danger")
                 }, 1000);
             }
 
@@ -59,7 +60,7 @@ const Signup = () => {
             // console.error("Error:", error);
             setTimeout(() => {
                 setLoading(false);
-                // showAlert(error, "danger")
+                showAlert(error, "danger")
             }, 1000);
         }
     }
@@ -130,7 +131,7 @@ const Signup = () => {
                         <div className="mb-3">
                             <label htmlFor="cpassword" className="form-label">Confirm Password</label>
                             <input type={!showpwd ? "password" : "text"} className="form-control" id="cpassword" aria-describedby="passwordHelp" value={credentials.cpassword} name='cpassword' onChange={onChange} autoComplete='' required onPaste={(e) => { e.preventDefault() }} />
-                           <div id="passwordHelp" className="form-text d-flex">Already have an account login <Link to='/login'>here</Link></div>
+                            <div id="passwordHelp" className="form-text d-flex">Already have an account login <Link className='mx-1' to='/login'>here</Link></div>
                         </div>
                         <button type="submit" disabled={credentials.password !== credentials.cpassword} className="btn btn-primary d-flex">
                             {loading &&

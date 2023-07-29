@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
-// import { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
-// import noteContext from '../context/notes/noteContext';
+import { useContext } from 'react';
+import travelContext from '../context/travel/TravelContext';
 import './login.css';
 
 
 function Login() {
   // document.title = 'Travel planner pro- Login';
-  // const context = useContext(noteContext);
-  // const { showAlert, host } = context;
+  const context = useContext(travelContext);
+  const { showAlert} = context;
   let host = "https://travel-backend-rho.vercel.app";
 
   const navigate = useNavigate();
@@ -40,13 +40,13 @@ function Login() {
         setTimeout(() => {
           setCredentials({ email: "", password: "" })
           setLoading(false);
-          // showAlert("Login succesfully", "success")
+          showAlert("Login succesfully", "success")
           navigate('/')
         }, 1500);
       } else {
         setTimeout(() => {
           setLoading(false);
-          // showAlert(result.error, "danger")
+          showAlert(result.error, "danger")
         }, 1000);
       }
 
@@ -54,7 +54,7 @@ function Login() {
       // console.error("Error:", error);
       setTimeout(() => {
         setLoading(false);
-        // showAlert(error, "danger")
+        showAlert(error, "danger")
       }, 1000);
     }
   }
@@ -100,7 +100,7 @@ function Login() {
                   {showpwd && <i className="fa-sharp fa-solid fa-eye-slash" title='hide password'></i>}
                 </label>
               </div>
-              <div id="passwordHelp" className="form-text d-flex">Do not have an account create <Link to='/signup'>here</Link></div>
+              <div id="passwordHelp" className="form-text d-flex">Do not have an account create <Link className='mx-1' to='/signup'>here</Link></div>
             </div>
             <button type="submit" className="btn btn-primary d-flex">
               {loading &&

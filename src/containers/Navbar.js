@@ -11,6 +11,7 @@ function Navbar() {
       }
       const logout = () => {
         window.location.reload()
+        localStorage.clear();
       }
   return (
     <div className='main-container'>

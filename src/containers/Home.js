@@ -63,7 +63,6 @@ function Home() {
       <CityPage placeId={place} />
       <Footer1 />
       <Footer2 />
-
     </div>
   )
 }

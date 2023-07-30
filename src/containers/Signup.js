@@ -97,8 +97,8 @@ const Signup = () => {
 
 
                                 <div className="hover-text">
-                                    <label className='mt-1  d-flex justify-content-center align-items-center rounded-circle' style={{ width: "1rem", height: "1rem", backgroundColor: "#fff", }}>
-                                        <i className="fa-solid fa-info fa-xs"></i>
+                                    <label className='mt-1  d-flex justify-content-center align-items-center rounded-circle' style={{ width: "1rem", height: "1rem", backgroundColor: "#0d6efd", }}>
+                                        <i className="fa-solid fa-info fa-xs" style={{color: "#fff"}}></i>
                                     </label>
                                     <span className="tooltip-text top">
                                         Must contain at least one  number

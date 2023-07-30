@@ -5,11 +5,12 @@ import { NavLink } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import travelContext from '../context/travel/TravelContext';
+import logo1 from "./images/travel logo transparent.png";
 
 
 function Navbar() {
   const context = useContext(travelContext);
-  const { showAlert} = context;
+  const { showAlert } = context;
 
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false)
@@ -34,13 +35,16 @@ function Navbar() {
             damping: 10,
           },
         }}
-        style={{ height: '100vh', background: '#2F4050' }}
+        // style={{ height: '100vh', background: '#2F4050' }}
+        style={{ height: '100vh', background: '#82A8E1' }}
         classname='newsidebar'
       >
+        
         <div className='top'>
           {isOpen && (
-            <div className='logo'>
-              <span className='partner'>TravelPartner</span>
+            <div className='logo '>
+              <img className='mx-2' src={logo1} style={{height: "60px", mixBlendMode: "multiply", marginTop: "10px"}} alt='logo' />
+              <h5 className='partner my-2' style={{color: "#fff", fontSize: "16px"}}>Travel Planner Pro</h5>
             </div>
           )}
           {

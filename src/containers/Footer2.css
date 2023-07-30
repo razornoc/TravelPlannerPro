@@ -1,0 +1,21 @@
+.bi-whatsapp:hover {
+    color: #43d854;
+}
+
+.bi-facebook:hover {
+    color: #3b5998;
+}
+
+.bi-twitter:hover {
+    color: #55acee;
+}
+
+.bi-youtube:hover {
+    color: #cd201f;
+}
+
+.footer2txt{
+    text-decoration: none;
+    color: #000000;
+    font-size: 18px;
+}

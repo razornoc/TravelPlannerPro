@@ -1,0 +1,12 @@
+.slide{
+    display: flex;
+    flex-direction: column;
+}
+.photos{
+    display: flex;
+    height: 300px;
+    /* width: 30px; */
+}
+.add{
+    height:40px;
+}

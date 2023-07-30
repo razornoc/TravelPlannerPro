@@ -1,0 +1,12 @@
+.main{
+    display: flex;
+
+}
+.Home{
+    background-color: gainsboro;
+}
+.slide{
+    color: blue;
+    display: flex;
+    flex-direction: column;
+}

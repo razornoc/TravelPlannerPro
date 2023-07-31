@@ -5,8 +5,8 @@ import './Dashboard.css'
 function Dashboard() {
   return (
     <div className='main'>
-        <Navbar/>
-        <Home/>
+      <Navbar />
+      <Home />
     </div>
   )
 }

@@ -46,6 +46,7 @@
 
 .navncloselogout {
     width: 46px;
+    cursor: pointer;
 }
 
 .navnopen {
@@ -64,6 +65,7 @@
 
 .navnopenlogout {
     width: 124px;
+    cursor: pointer;
 }
 
 .navopenitem {

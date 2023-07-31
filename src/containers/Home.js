@@ -9,31 +9,35 @@ import logotxt2 from './images/homelogotxt.png'
 
 
 function Home() {
-  const [search, setSearch] = useState()
+  const [search, setSearch] = useState(null)
   const [options, setOptions] = useState([])
-  const [place, setPlace] = useState()
-  const [found, setFound] = useState(false)
+  const [place, setPlace] = useState(null)
+  // const [found, setFound] = useState(false)
   // const [found1, setFound1] = useState(false)
   const handleInputChange = (event) => {
     setSearch(event.target.value)
   }
+
+  const apikey = "AIzaSyBGLMyzr3R54gibvOc1VuqJ1bodvB58z7c";
+
   useEffect(() => {
     const fetchOptions = async () => {
-
       try {
-        const apikey = "AIzaSyBGLMyzr3R54gibvOc1VuqJ1bodvB58z7c"
+
         const response = await axios.get(`https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${search}&key=${apikey}`)
-        if (response.data?.predictions) {
+        if (response.data.predictions) {
           const options = response.data.predictions.map((place) => place.description);
           setOptions(options);
-          console.log(response.data)
+          // console.log(response.data)
           setPlace(response.data.predictions[0].place_id)
         }
       }
       catch (error) {
         console.log('error:', error)
       }
+
     }
+
     if (search) {
       fetchOptions()
     }
@@ -41,13 +45,13 @@ function Home() {
   }, [search])
   const handleSelect = (event) => {
     setSearch(event.target.value)
-    setFound(true)
+    // setFound(true)
   }
   return (
     <div className='Home'
-    style={{width: "86vw", marginLeft: "12vw" }}
+      style={{ width: "86vw", marginLeft: "12vw" }}
     >
-      <img style={{marginTop: "20px", marginBottom: "30px"}} src={logotxt2} alt='logo' />
+      <img style={{ marginTop: "20px", marginBottom: "30px" }} src={logotxt2} alt='logo' />
 
 
 

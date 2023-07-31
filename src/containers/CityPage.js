@@ -21,13 +21,16 @@ const CityPage = ({ placeId }) => {
   }, [map, placeId]);
 
   const initMap = () => {
-    const mapOptions = {
+    try{const mapOptions = {
       center: { lat: 0, lng: 0 },
       zoom: 12,
     };
 
     const newMap = new window.google.maps.Map(document.getElementById('map'), mapOptions);
-    setMap(newMap);
+    setMap(newMap);}
+    catch(error){
+      console.error('error initializing error:',error)
+    }
   };
 
 
@@ -67,7 +70,7 @@ const CityPage = ({ placeId }) => {
 
   return (
     <div>
-      {console.log({ placeId })}
+      {/* {console.log({ placeId })} */}
       <Slide placeId={placeId} photos={photos} />
       {/* {console.log(photos)} */}
       <div style={{ display: "flex", justifyContent: "center", marginTop: "40px", marginBottom: "40px" }}>

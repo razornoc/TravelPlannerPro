@@ -8,6 +8,7 @@ import Alert from './containers/Alert';
 import TravelState from './context/travel/TravelState';
 import NotFound from './containers/NotFound';
 import Navbar2 from './containers/Navbar2';
+import Destination from './containers/Destination';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(true)
@@ -23,6 +24,7 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<Signup />} />
             <Route exact path="/*" element={<NotFound />} />
+            <Route exact path="/destination/:id" element={<Destination />} />
             <Route exact path="/nav" element={<Navbar2 />} />
 
           </Routes>

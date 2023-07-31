@@ -1,5 +1,4 @@
 import React from 'react'
-import Navbar from './Navbar'
 import Home from './Home'
 import './Dashboard.css'
 import Navbar2 from './Navbar2'

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import minilogo from './images/travelminilogo.png'
 import dashboardlogomini from './images/dashboardlogomini.png'
 import logoutmini from './images/logoutmini.png'
@@ -9,6 +9,9 @@ import logoutbig from './images/logoutbig.png'
 import navalterclose from './images/navalterclose2.png'
 import { useContext } from 'react';
 import travelContext from '../context/travel/TravelContext';
+import { Link } from 'react-router-dom';
+import loginbig from './images/loginbig.png'
+import loginmini from './images/loginmini.png'
 
 const Navbar2 = () => {
     const context = useContext(travelContext);
@@ -38,13 +41,19 @@ const Navbar2 = () => {
                 <div>
                     {!open &&
                         <div className='navnclose'>
-                            <img className='logomininav' src={minilogo} alt='logo' />
+                            <Link to='/'><img className='logomininav' src={minilogo} alt='logo' /></Link>
+
                             <div className='navnclosemid'>
                                 <img src={dashboardlogomini} alt='logo' />
                                 <img src={dashboardlogomini} alt='logo' />
                                 <img src={dashboardlogomini} alt='logo' />
                             </div>
-                            <img onClick={logout} className='navncloselogout' src={logoutmini} alt='logout' />
+                            {localStorage.getItem("token") &&
+                                <img onClick={logout} className='navncloselogout' src={logoutmini} alt='logout' />
+                            }
+                            {!localStorage.getItem("token") &&
+                                <Link to='/login'><img className='navncloselogout' src={loginmini} alt='logo' /></Link>
+                            }
                         </div>
                     }
 
@@ -66,7 +75,12 @@ const Navbar2 = () => {
                                     <p className='navtxt1'>Dashboard</p>
                                 </div>
                             </div>
-                            <img onClick={logout} className='navnopenlogout' src={logoutbig} alt='logo' />
+                            {localStorage.getItem("token") &&
+                                <img onClick={logout} className='navnopenlogout' src={logoutbig} alt='logo' />
+                            }
+                            {!localStorage.getItem("token") &&
+                                <Link to='/login'><img className='navnopenlogout' src={loginbig} alt='logo' /></Link>
+                            }
                         </div>
 
 

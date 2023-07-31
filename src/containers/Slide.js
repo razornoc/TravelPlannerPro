@@ -1,17 +1,20 @@
 import React from 'react'
 import './Slide.css'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader  
+import { Link } from 'react-router-dom';
 // import { Carousel } from 'react-responsive-carousel';
 
 const Slide = ({ placeId, photos }) => {
   return (
     <div className='slide'>
-      {console.log(photos)}
+      {/* {console.log(photos)} */}
       {/* {photos.map((photo)=>{
             <img src={photo} />
         })} */}
+        {/* {console.log(placeId, "destination")}; */}
       <div style={{ display: "flex", }}>
-        {/* {placeId && <button className='add btn btn-primary' style={{ width: "200px" }}>click here to add</button>} */}
+         {placeId && localStorage.getItem("token") && <Link to={`/destination/${placeId}`} className="btn btn-outline-primary rounded-pill  mx-3 my-2" style={{ width: "200px" }}>Generate iternery</Link>}
+         {placeId && !localStorage.getItem("token") && <Link className="btn btn-outline-primary rounded-pill  mx-3 my-2" to="/login" >Login to generate iternery</Link>}
       </div>
       {/* <Carousel> */}
       {/* <div className='photos'>

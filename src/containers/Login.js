@@ -8,7 +8,7 @@ import './login.css';
 function Login() {
   // document.title = 'Travel planner pro- Login';
   const context = useContext(travelContext);
-  const { showAlert} = context;
+  const { showAlert } = context;
   let host = "https://travel-backend-rho.vercel.app";
 
   const navigate = useNavigate();

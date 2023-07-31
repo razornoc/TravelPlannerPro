@@ -1,0 +1,12 @@
+.card{
+    display:flex;
+    flex-direction: column;
+}
+.destin{
+    display:flex
+}
+.card-container {
+    display: flex;
+    flex-direction: column;
+    /* gap: 2rem;  */
+  }

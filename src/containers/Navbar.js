@@ -70,7 +70,7 @@ function Navbar() {
             <div className='text'>{isOpen && 'Dashboard'}</div>
           </NavLink>
           <NavLink
-            to={'/'}
+            to={'/destinations'}
             key={'dash2'}
             activeClassName='active'
             className='link'

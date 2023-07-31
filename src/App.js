@@ -9,9 +9,10 @@ import TravelState from './context/travel/TravelState';
 import NotFound from './containers/NotFound';
 import Navbar2 from './containers/Navbar2';
 import Destination from './containers/Destination';
+import Mydestinations from './containers/Mydestinations';
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(true)
+  // const [loggedIn, setLoggedIn] = useState(true)
   return (
     <div className='App'>
       <TravelState>
@@ -19,13 +20,15 @@ function App() {
 
         <Router>
           <Routes>
-            <Route path='/' element={loggedIn ? [<Dashboard />] : <Login />} />
+            {/* <Route path='/' element={loggedIn ? [<Dashboard />] : <Login />} /> */}
+            <Route path='/' element={<Dashboard />} />
 
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<Signup />} />
             <Route exact path="/*" element={<NotFound />} />
             <Route exact path="/destination/:id" element={<Destination />} />
             <Route exact path="/nav" element={<Navbar2 />} />
+            <Route exact path="/mydestinations" element={ localStorage.getItem("token") && <Mydestinations />} />
 
           </Routes>
         </Router>

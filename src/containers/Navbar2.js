@@ -12,6 +12,7 @@ import travelContext from '../context/travel/TravelContext';
 import { Link } from 'react-router-dom';
 import loginbig from './images/loginbig.png'
 import loginmini from './images/loginmini.png'
+import homeicon from './images/homeicon.png'
 
 const Navbar2 = () => {
     const context = useContext(travelContext);
@@ -44,9 +45,16 @@ const Navbar2 = () => {
                             <Link to='/'><img className='logomininav' src={minilogo} alt='logo' /></Link>
 
                             <div className='navnclosemid'>
-                                <img src={dashboardlogomini} alt='logo' />
-                                <img src={dashboardlogomini} alt='logo' />
-                                <img src={dashboardlogomini} alt='logo' />
+                                {localStorage.getItem("token") &&
+
+                                    <Link to='/mydestinations'>
+                                        <img src={dashboardlogomini} alt='logo' />
+                                    </Link>
+                                }
+                                <Link to='/'>
+                                    <img src={homeicon} alt='logo' />
+                                </Link>
+                                {/* <img src={dashboardlogomini} alt='logo' /> */}
                             </div>
                             {localStorage.getItem("token") &&
                                 <img onClick={logout} className='navncloselogout' src={logoutmini} alt='logout' />
@@ -60,20 +68,29 @@ const Navbar2 = () => {
                     {open &&
 
                         <div className='navnopen'>
-                            <img className='logonavbig' src={logobig} alt='logo' />
+                            <Link to='/'>
+                                <img className='logonavbig' src={logobig} alt='logo' />
+                            </Link>
                             <div className='navnopenemid'>
-                                <div className='navopenitem'>
+                                {localStorage.getItem("token") &&
+
+                                    <Link style={{ textDecoration: "none" }} to='/mydestinations'>
+                                        <div className='navopenitem'>
+                                            <img src={dashboardlogomini} alt='logo' />
+                                            <p className='navtxt1'>My Destinations</p>
+                                        </div>
+                                    </Link>
+                                }
+                                <Link style={{ textDecoration: "none" }} to='/'>
+                                    <div className='navopenitem'>
+                                        <img src={homeicon} alt='logo' />
+                                        <p className='navtxt1'>Home</p>
+                                    </div>
+                                </Link>
+                                {/* <div className='navopenitem'>
                                     <img src={dashboardlogomini} alt='logo' />
                                     <p className='navtxt1'>Dashboard</p>
-                                </div>
-                                <div className='navopenitem'>
-                                    <img src={dashboardlogomini} alt='logo' />
-                                    <p className='navtxt1'>Dashboard</p>
-                                </div>
-                                <div className='navopenitem'>
-                                    <img src={dashboardlogomini} alt='logo' />
-                                    <p className='navtxt1'>Dashboard</p>
-                                </div>
+                                </div> */}
                             </div>
                             {localStorage.getItem("token") &&
                                 <img onClick={logout} className='navnopenlogout' src={logoutbig} alt='logo' />

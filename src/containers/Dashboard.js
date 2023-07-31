@@ -4,9 +4,11 @@ import Home from './Home'
 import './Dashboard.css'
 function Dashboard() {
   return (
-    <div className='main'>
-        <Navbar/>
-        <Home/>
+    <div className='main'
+      // style={{ width: "100vw" }}
+    >
+      <Navbar />
+      <Home />
     </div>
   )
 }

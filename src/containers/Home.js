@@ -10,7 +10,7 @@ function Home() {
   const [options, setOptions] = useState([])
   const [place, setPlace] = useState()
   const [found, setFound] = useState(false)
-  const [found1, setFound1] = useState(false)
+  // const [found1, setFound1] = useState(false)
   const handleInputChange = (event) => {
     setSearch(event.target.value)
   }
@@ -41,17 +41,19 @@ function Home() {
     setFound(true)
   }
   return (
-    <div className='Home'>
-      <h1>Find your desired city</h1>
+    <div className='Home'
+    style={{width: "100vw"}}
+    >
+      <h1 style={{marginTop: "20px", marginBottom: "30px"}}>Find your desired city</h1>
       <Autocomplete
         disablePortal
         id='combo-box-demo'
         options={options}
-        sx={{ width: 500 }}
+        sx={{ width: "100wh" }}
         value={search}
         renderInput={(params) => (
           <TextField
-            style={{ width: 500 }}
+            style={{ width: "50vw", borderRadius: "50%" }}
             {...params}
             label='Enter the City you would like to visit'
             onChange={handleInputChange}

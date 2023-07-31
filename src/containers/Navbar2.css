@@ -1,0 +1,88 @@
+.nav2 {
+    display: flex;
+    align-items: center;
+}
+
+.navalter {
+    width: 30px;
+    margin-left: 1vw;
+}
+
+.navalterclose {
+    width: 22px;
+    margin-left: 1vw;
+}
+
+.navnclose {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    margin-left: 1vw;
+}
+
+.logomininav {
+    width: 50px;
+}
+
+.navnclosemid {
+    display: flex;
+    flex-direction: column;
+    width: 40px;
+    gap: 24px;
+}
+
+.navnopenemid {
+    display: flex;
+    flex-direction: column;
+    width: 40px;
+    gap: 24px;
+    align-items: flex-start;
+    margin-top: -40px;
+}
+
+.navncloselogout {
+    width: 46px;
+}
+
+.navnopen {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: normal;
+    height: 100vh;
+    margin-left: 1vw;
+}
+
+
+.logonavbig {
+    width: 148px;
+}
+
+.navnopenlogout {
+    width: 124px;
+}
+
+.navopenitem {
+    width: 160px;
+    height: 46px;
+    /* background-color: #9f9e9e; */
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    border-radius: 4px;
+    /* opacity: 0.20000000298023224; */
+    background-color: #fcfcfc3b;
+
+}
+
+.navtxt1 {
+    color: #FCFCFC;
+    font-family: Poppins, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 14px;
+
+}

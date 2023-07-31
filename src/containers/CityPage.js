@@ -17,6 +17,7 @@ const CityPage = ({placeId})=>{
       else if(placeId && map){
         fetchPlaceDetails(placeId)
       }
+      // eslint-disable-next-line
     }, [map,placeId]);
   
     const initMap = () => {

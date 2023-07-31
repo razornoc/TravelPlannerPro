@@ -5,6 +5,9 @@ import CityPage from './CityPage';
 import axios from 'axios';
 import Footer2 from './Footer2';
 import Footer1 from './Footer1';
+import logotxt2 from './images/homelogotxt.png'
+
+
 function Home() {
   const [search, setSearch] = useState()
   const [options, setOptions] = useState([])
@@ -42,9 +45,13 @@ function Home() {
   }
   return (
     <div className='Home'
-    style={{width: "100vw"}}
+    style={{width: "86vw", marginLeft: "12vw" }}
     >
-      <h1 style={{marginTop: "20px", marginBottom: "30px"}}>Find your desired city</h1>
+      <img style={{marginTop: "20px", marginBottom: "30px"}} src={logotxt2} alt='logo' />
+
+
+
+      {/* <h1 style={{marginTop: "20px", marginBottom: "30px"}}>Find your desired city</h1> */}
       <Autocomplete
         disablePortal
         id='combo-box-demo'
@@ -53,7 +60,7 @@ function Home() {
         value={search}
         renderInput={(params) => (
           <TextField
-            style={{ width: "50vw", borderRadius: "50%" }}
+            style={{ width: "50vw", borderRadius: "50%", marginBottom: "72px" }}
             {...params}
             label='Enter the City you would like to visit'
             onChange={handleInputChange}

@@ -7,16 +7,25 @@ import navalter from './images/navalter.png'
 import logobig from './images/travellogo2nav.png'
 import logoutbig from './images/logoutbig.png'
 import navalterclose from './images/navalterclose2.png'
+import { useContext } from 'react';
+import travelContext from '../context/travel/TravelContext';
 
 const Navbar2 = () => {
+    const context = useContext(travelContext);
+    const { showAlert } = context;
+
     const [open, setOpen] = useState(false);
     // const [navwidth, setNavwidth] = useState("6vw")
 
     const navchangehandler = () => {
         setOpen(!open);
-        // if (open) {
-        //     setNavwidth("16vw");
-        // }
+    }
+
+    const logout = () => {
+        // window.location.reload()
+        localStorage.clear();
+        showAlert("Logout succesfully", "success");
+        // navigate("/login");
     }
     return (
         <>
@@ -35,7 +44,7 @@ const Navbar2 = () => {
                                 <img src={dashboardlogomini} alt='logo' />
                                 <img src={dashboardlogomini} alt='logo' />
                             </div>
-                            <img className='navncloselogout' src={logoutmini} alt='logo' />
+                            <img onClick={logout} className='navncloselogout' src={logoutmini} alt='logout' />
                         </div>
                     }
 
@@ -57,7 +66,7 @@ const Navbar2 = () => {
                                     <p className='navtxt1'>Dashboard</p>
                                 </div>
                             </div>
-                            <img className='navnopenlogout' src={logoutbig} alt='logo' />
+                            <img onClick={logout} className='navnopenlogout' src={logoutbig} alt='logo' />
                         </div>
 
 

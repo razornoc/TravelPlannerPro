@@ -10,7 +10,12 @@ const Footer1 = () => {
         <>
             <div>
                 <div style={{ marginBottom: "48px", marginTop: "38px" }}>
-                    <div className='d-flex' style={{ justifyContent: "space-around", alignItems: "center" }}>
+                    <div style={{display: "flex", justifyContent: "space-between"}}>
+                        <div style={{width: "20vw", height: "4px", background: "#E22467"}}></div>
+                        <div style={{width: "20vw", height: "4px", background: "#0142A8"}}></div>
+                        <div style={{width: "20vw", height: "4px", background: "#00CAB4"}}></div>
+                    </div>
+                    <div className='d-flex' style={{ justifyContent: "space-around", alignItems: "center", marginTop: "32px" }}>
                         <img src={imgtxt} style={{ height: "32px" }} alt='imgtxt' />
                         <img src={logotxt} style={{mixBlendMode: "multiply"}} alt='imgtxt' />
                         <div className='d-flex gap-5 align-items-center'>

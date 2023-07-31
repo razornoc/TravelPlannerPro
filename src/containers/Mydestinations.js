@@ -28,7 +28,7 @@ const Mydestinations = () => {
   const [placeIds, setPlaceIds] = useState([]);
 
   // Fetch all Notes
-  const getNotes = async () => {
+  const getPlaces = async () => {
     // API Call
 
     try {
@@ -58,7 +58,7 @@ const Mydestinations = () => {
   }
 
   useEffect(() => {
-    getNotes();
+    getPlaces();
     // eslint-disable-next-line
   }, [])
 

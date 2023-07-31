@@ -9,7 +9,7 @@ function Home() {
   const [search, setSearch] = useState()
   const [options, setOptions] = useState([])
   const [place, setPlace] = useState()
-  const [found, setFound] = useState(false)
+  const [found, setFound] = useState(true)
   const [found1, setFound1] = useState(false)
   const handleInputChange = (event) => {
     setSearch(event.target.value)
@@ -40,10 +40,13 @@ function Home() {
     setSearch(event.target.value)
     setFound(true)
   }
+  const handlebool=(data)=>{
+    setFound(false)
+  }
   return (
     <div className='Home'>
-      <h1>Find your desired city</h1>
-      <Autocomplete
+      {found&&<h1>Find your desired city</h1>}
+      {found&&<Autocomplete
         disablePortal
         id='combo-box-demo'
         options={options}
@@ -59,8 +62,8 @@ function Home() {
         )}
         onSelect={handleSelect}
         freeSolo
-      />
-      <CityPage placeId={place} />
+      />}
+      <CityPage placeId={place} name={search} sendDataBack={handlebool}/>
       <Footer1 />
       <Footer2 />
     </div>

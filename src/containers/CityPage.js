@@ -1,9 +1,12 @@
 import React ,{useState,useEffect}from 'react'
 import axios from 'axios'
 import Slide from './Slide';
-const CityPage = ({placeId})=>{
+import GenItinerary from './GenItinerary'
+const CityPage = ({placeId,name,sendDataBack})=>{
     const [map, setMap] = useState(null);
     const [photos,setPhotos]=useState([]);
+    const [generate,setGenerate]=useState(false)
+    const [placename,setplaceName] =useState()
 
     useEffect(() => {
       if (!map) {
@@ -64,12 +67,17 @@ const CityPage = ({placeId})=>{
       }
     };
   
+    const gen=()=>{
+      setplaceName(name)
+      setGenerate(true)
+      sendDataBack(false)
+    }
     return(
     <div>
-    {console.log({placeId})}
-    <Slide placeId={placeId} photos={photos}/>
-    {/* {console.log(photos)} */}
-    {placeId&&<div id="map" style={{ height: '400px', width: '900px' }} />}
+    {!generate&&<Slide placeId={placeId} photos={photos}/>}
+    {!generate&&<button onClick={gen}>generate itinerary</button>}
+    {placeId&&!generate&&<div id="map" style={{ height: '400px', width: '900px' }} />}
+    {generate&&<GenItinerary placename={placename} placeId={placeId}/>}
     </div>
     )
 }

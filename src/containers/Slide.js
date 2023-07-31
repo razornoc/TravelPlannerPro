@@ -7,10 +7,7 @@ const Slide=({placeId,photos})=> {
   return (
     <div className='slide'>
         {console.log(photos)}
-        {/* {photos.map((photo)=>{
-            <img src={photo} />
-        })} */}
-        {placeId&&<button className='add'>click here to add</button>}
+        {/* {placeId&&<button className='add'>generate itinerary</button>} */}
         {/* <Carousel> */}
         <div className='photos'>
         {photos.map((photo, index) => (

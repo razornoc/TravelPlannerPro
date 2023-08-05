@@ -1,4 +1,4 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Login from './containers/Login'
 import Dashboard from './containers/Dashboard'
@@ -7,9 +7,10 @@ import Signup from './containers/Signup';
 import Alert from './containers/Alert';
 import TravelState from './context/travel/TravelState';
 import NotFound from './containers/NotFound';
-import Navbar2 from './containers/Navbar2';
+// import Navbar2 from './containers/Navbar2';
 import Destination from './containers/Destination';
 import Mydestinations from './containers/Mydestinations';
+import omesh from './containers/omesh';
 
 function App() {
   // const [loggedIn, setLoggedIn] = useState(true)
@@ -25,9 +26,10 @@ function App() {
 
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<Signup />} />
+            <Route path='/omesh' element={<Signup />} />
             <Route exact path="/*" element={<NotFound />} />
             <Route exact path="/destination/:id" element={<Destination />} />
-            <Route exact path="/nav" element={<Navbar2 />} />
+            {/* <Route exact path="/nav" element={<Navbar2 />} /> */}
             <Route exact path="/mydestinations" element={ localStorage.getItem("token") && <Mydestinations />} />
 
           </Routes>

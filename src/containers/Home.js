@@ -65,7 +65,8 @@ function Home() {
         renderInput={(params) => (
           <TextField
             style={{ width: "50vw", borderRadius: "50%", marginBottom: "72px" }}
-            {...params}
+            {...params} 
+            
             label='Enter the City you would like to visit'
             onChange={handleInputChange}
           />
